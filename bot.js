@@ -5,7 +5,7 @@ var botID = process.env.BOT_ID;
 
 function respond() {
   var request = JSON.parse(this.req.chunks[0]),
-      botRegex = /^\Maceron$/;
+      botRegex = /^\why$/, botRegexx = /^\Why$/;
 
   if(request.text && botRegex.test(request.text)) {
     this.res.writeHead(200);
@@ -22,7 +22,43 @@ function respond() {
 function postMessage() {
   var botResponse, options, body, botReq;
 
-	botResponse = "I'm not a bot";
+	var maximum = 10;
+	var minimum = 1;
+
+	var randomnumber = Math.floor(Math.random() * (maximum - minimum + 1)) + minimum;
+  
+  switch(randomnumber){
+
+	case 1:
+		botResponse = "Who turned out the lights?";
+		break;
+	case 2:
+		botResponse = "Give me some tendies Mummy. REEEEEEEEEE";
+		break;
+	case 3:
+		botResponse = "http://imgur.com/a/VFqoR";
+		break;
+	case 4:
+		botResponse = "All I see is pain";
+		break;
+	case 5:
+		botResponse = "I'm buying clothes at the Existential Crisis Store";
+		break;
+	case 6:
+		botResponse = "Maybe tonight, I will finally get the big sleep";
+		break;
+	case 7:
+		botResponse = "My bedroom smells like sweaty gym clothes. Phil's stuff is in there too";
+		break;
+	case 8:
+		botResponse = "http://imgur.com/a/x8nen";
+		break;
+	case 9:
+		botResponse = "I can't feel anymore.";
+		break;
+	case 10:
+		botResponse = "I fell into the void many years ago. Join me.";
+		break;
   }
 
   options = {
